@@ -29,8 +29,7 @@ import org.apache.commons.logging.Log;
 
 // by: org.apache.ibatis.datasource.pooled.PooledDataSource
 /**
- * This is a simple, synchronous, thread-safe socket pool.
- * <br>
+ * This is a simple, synchronous, thread-safe socket pool
  */
 public class SocketsPool {
 

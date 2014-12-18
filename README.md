@@ -68,3 +68,46 @@ String answer = pool.invoke(new SocketConnHandler<String>() {
 ```
 
 See [full example](https://github.com/edolganov/demos/blob/master/demo/src/SocketPool_Demo.java).
+
+
+## socket-json-server-client
+**JsonSocketServer** is extension of [**SocketServer**](https://github.com/edolganov/demos#socket-server) 
+with JSON protocol for java objects serialization and with AES128 encryption:
+```java
+int port = 11001;
+int maxThreads = 10;
+String secureKey = "3rw!!esafd";
+
+JsonSocketServer server = new JsonSocketServer(port, maxThreads);
+server.setSecureKey(secureKey);
+server.runAsync();
+
+server.putController(Req.class, new ReqController<Req, Resp>() {
+	@Override
+	public Resp processReq(Req data, SocketAddress remoteAddress) throws Exception {
+		
+		System.out.println("Client req: " + data);
+		
+		Resp resp = new Resp("echo: "+data.in);
+		return resp;
+	}
+});
+```
+**JsonSocketClient** uses [SocketsPool](https://github.com/edolganov/demos#socket-client-pool) and has easy handler api:
+```java
+String host = "localhost";
+int port = 11001;
+int maxThreads = 10;
+int maxConnections = 10;
+int idleConnections = 5;
+String secureKey = "3rw!!esafd";
+
+JsonSocketClient client = new JsonSocketClient(host, port, maxConnections, idleConnections);
+client.setSecureKey(secureKey);
+
+//request - response
+Future<Object> futureResult = client.invokeAsync(new Req("hello"));
+Resp resp = (Resp)futureResult.get();
+```
+
+See [full example](https://github.com/edolganov/demos/blob/master/demo/src/SocketJson_Server_Client_Demo.java).

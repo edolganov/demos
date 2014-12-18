@@ -1,29 +1,31 @@
-import java.io.IOException;
-import java.net.SocketAddress;
-
 import demo.socket.json.client.JsonSocketClient;
 import demo.socket.json.server.JsonSocketServer;
 import demo.socket.json.server.ReqController;
 
+import java.net.SocketAddress;
+import java.util.concurrent.Future;
+
 
 public class SocketJson_Server_Client_Demo {
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		
-		String host = "localhost";
 		int port = 11001;
 		int maxThreads = 10;
-		String encodeContentKey = "3rw!!esafd";
+		String secureKey = "3rw!!esafd";
 		
 		
 		JsonSocketServer server = new JsonSocketServer(port, maxThreads);
-		JsonSocketClient client = new JsonSocketClient(host, port, 1, 1);
-		
-		//You can secure your tcp content!
-		server.setSecureKey(encodeContentKey);
-		client.setSecureKey(encodeContentKey);
-		
+		server.setSecureKey(secureKey);
 		server.runAsync();
+		
+		String host = "localhost";
+		int maxConnections = 1;
+		int idleConnections = 1;
+		JsonSocketClient client = new JsonSocketClient(host, port, maxConnections, idleConnections);
+		client.setSecureKey(secureKey);
+		
+		
 		
 		try {
 			
@@ -40,7 +42,8 @@ public class SocketJson_Server_Client_Demo {
 			});
 			
 			//client req
-			Resp resp = (Resp)client.invoke(new Req("hello"));
+			Future<Object> futureResult = client.invokeAsync(new Req("hello"));
+			Resp resp = (Resp)futureResult.get();
 			System.out.println("Server resp: " + resp);
 			
 			client.forceCloseAll();

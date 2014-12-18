@@ -2,12 +2,17 @@
 <classpath>
 	<classpathentry kind="src" path="common/src"/>
 	<classpathentry kind="src" path="common/test-src"/>
+	<classpathentry kind="src" path="common-model/src"/>
 	<classpathentry kind="src" path="socket-server/src"/>
 	<classpathentry kind="src" path="socket-server/test-src"/>
 	<classpathentry kind="src" path="socket-client-pool/src"/>
 	<classpathentry kind="src" path="socket-client-pool/test-src"/>
 	<classpathentry kind="src" path="socket-json-server-client/src"/>
 	<classpathentry kind="src" path="socket-json-server-client/test-src"/>
+	<classpathentry kind="src" path="nosql-comments-db/src"/>
+	<classpathentry kind="src" path="nosql-comments-db/test-src"/>
+	<classpathentry kind="src" path="nosql-comments-db-server-client/src"/>
+	<classpathentry kind="src" path="nosql-comments-db-server-client/test-src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="thirdparty/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="demo/src"/>
 	<classpathentry kind="src" path="common/src"/>
 	<classpathentry kind="src" path="common/test-src"/>
 	<classpathentry kind="src" path="common-model/src"/>

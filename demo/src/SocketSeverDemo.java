@@ -16,15 +16,15 @@ public class SocketSeverDemo {
 		
 		int port = 11002;
 		int maxThreads = 10;
-		SocketServer server = new SocketServer(port, maxThreads, new EchoHandler());
+		SocketServer server = new SocketServer(port, maxThreads, new HttpEchoHandler());
 		
 		System.out.println("Server started on port: " + 11002+". Try to connect by http://127.0.0.1:"+port);
 		server.runWait();
 		
 	}
 	
-	/** Handler example */
-	static class EchoHandler extends SocketWriterHander {
+	/** Socket connection handler example */
+	public static class HttpEchoHandler extends SocketWriterHander {
 		
 		@Override
 		protected void process(Socket openedSocket, BufferedReader socketReader, PrintWriter socketWriter, SocketServer owner) throws Throwable {

@@ -121,4 +121,6 @@ NoSql database for storing a comments in JSON format and fast read them.
 
 See [the test](https://github.com/edolganov/demos/blob/master/nosql-comments-db/test-src/performance/MaxDBCreate.java).
 
-This database was created and used in [freecom.me project](http://freecom.me/).
+This database was created and used in [freecom.me](http://freecom.me/) project.
+
+See [example of work](https://github.com/edolganov/demos/blob/master/demo/src/NoSql_CommentsDB_Demo.java).

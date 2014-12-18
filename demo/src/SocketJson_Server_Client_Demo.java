@@ -52,6 +52,8 @@ public class SocketJson_Server_Client_Demo {
 			server.shutdownAsync();
 		}
 		
+		
+		System.exit(0);
 	}
 	
 	static class Req {

@@ -1,16 +1,15 @@
 import static demo.util.Util.*;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.Socket;
-
 import demo.socket.pool.SocketConn;
 import demo.socket.pool.SocketConnHandler;
 import demo.socket.pool.SocketsPool;
 import demo.socket.server.SocketServer;
 import demo.socket.server.SocketWriterHander;
 import demo.util.StreamUtil;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 
 public class SocketPool_Demo {
@@ -79,6 +78,8 @@ public class SocketPool_Demo {
 			server.shutdownAsync();
 		}
 		
+		
+		System.exit(0);
 	}
 	
 	

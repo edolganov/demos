@@ -97,7 +97,6 @@ server.putController(Req.class, new ReqController<Req, Resp>() {
 ```java
 String host = "localhost";
 int port = 11001;
-int maxThreads = 10;
 int maxConnections = 10;
 int idleConnections = 5;
 String secureKey = "3rw!!esafd";
@@ -111,3 +110,10 @@ Resp resp = (Resp)futureResult.get();
 ```
 
 See [full example](https://github.com/edolganov/demos/blob/master/demo/src/SocketJson_Server_Client_Demo.java).
+
+## nosql-comments-db
+NoSql database for storing a comments in JSON format and fast read them.
+**Capabilities:** 
+- Creating 10.000 urls with 500 comments (5.000.0000 total comments count)
+- 40MB RAM
+- 3,2GB HDD

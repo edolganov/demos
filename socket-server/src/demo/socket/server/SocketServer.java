@@ -1,5 +1,8 @@
 package demo.socket.server;
 
+import static demo.util.Util.*;
+import static demo.util.concurrent.ExecutorsUtil.*;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -15,9 +18,6 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.commons.logging.Log;
-
-import static demo.util.Util.*;
-import static demo.util.concurrent.ExecutorsUtil.*;
 
 
 public class SocketServer implements UncaughtExceptionHandler {
@@ -50,10 +50,12 @@ public class SocketServer implements UncaughtExceptionHandler {
 		this.maxThreads = maxThreads;
 	}
 	
+	/** run in other thread */
 	public void runAsync() throws IOException{
 		init();
 	}
 	
+	/** run in current thread - it will freeze until the server's stop */
 	public void runWait() throws IOException{
 		init();
 		try {

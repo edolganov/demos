@@ -13,7 +13,7 @@ import demo.socket.server.SocketWriterHander;
 import demo.util.StreamUtil;
 
 
-public class SocketPoolDemo {
+public class SocketPool_Demo {
 	
 	public static void main(String[] args) throws IOException {
 		

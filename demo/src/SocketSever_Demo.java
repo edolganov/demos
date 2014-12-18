@@ -10,7 +10,7 @@ import demo.socket.server.SocketWriterHander;
 
 
 
-public class SocketSeverDemo {
+public class SocketSever_Demo {
 	
 	public static void main(String[] args) throws IOException {
 		

@@ -6,7 +6,7 @@ import demo.socket.json.server.JsonSocketServer;
 import demo.socket.json.server.ReqController;
 
 
-public class SocketJsonServerClientDemo {
+public class SocketJson_Server_Client_Demo {
 	
 	public static void main(String[] args) throws IOException {
 		
@@ -19,6 +19,7 @@ public class SocketJsonServerClientDemo {
 		JsonSocketServer server = new JsonSocketServer(port, maxThreads);
 		JsonSocketClient client = new JsonSocketClient(host, port, 1, 1);
 		
+		//You can secure your tcp content!
 		server.setSecureKey(encodeContentKey);
 		client.setSecureKey(encodeContentKey);
 		

@@ -71,7 +71,7 @@ See [full example](https://github.com/edolganov/demos/blob/master/demo/src/Socke
 
 
 ## socket-json-server-client
-**JsonSocketServer** is extension of [**SocketServer**](https://github.com/edolganov/demos#socket-server) 
+**JsonSocketServer** is extension of [SocketServer](https://github.com/edolganov/demos#socket-server) 
 with JSON protocol for java objects serialization and with AES128 encryption:
 ```java
 int port = 11001;

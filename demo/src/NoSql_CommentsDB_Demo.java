@@ -39,6 +39,10 @@ public class NoSql_CommentsDB_Demo {
 		String jsonUrl1Comments = StreamUtil.streamToStr(url1PageStream);
 		System.out.println("Url1 comments: " + jsonUrl1Comments);
 		
+		//OUT PRINT:
+		//  Urls count: 3
+		//  Url1 comments: {"created":"2014-12-18T19:13:22+0400","author":1,"content":"some text 1"},{"created":"2014-12-18T19:13:22+0400","author":1,"content":"some text 4"}
+		
 		
 		db.close();
 	}

@@ -93,7 +93,7 @@ server.putController(Req.class, new ReqController<Req, Resp>() {
 	}
 });
 ```
-**JsonSocketClient** uses [SocketsPool](https://github.com/edolganov/demos#socket-client-pool) and has easy handler api:
+**JsonSocketClient** uses [SocketsPool](https://github.com/edolganov/demos#socket-client-pool) and has easy 'request-response' api:
 ```java
 String host = "localhost";
 int port = 11001;

@@ -1,4 +1,4 @@
-package sc.comp.cdb.server;
+package demo.nosql.comment.server;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;

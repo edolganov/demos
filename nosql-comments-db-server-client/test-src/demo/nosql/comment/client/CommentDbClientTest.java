@@ -1,4 +1,4 @@
-package sc.comp.cdb.client;
+package demo.nosql.comment.client;
 
 import java.io.ByteArrayOutputStream;
 

@@ -27,59 +27,61 @@ public class SocketJsonServerClientDemo {
 		try {
 			
 			//server handler
-			server.putController(ReqObject.class, new ReqController<ReqObject, RespObject>() {
+			server.putController(Req.class, new ReqController<Req, Resp>() {
 				@Override
-				public RespObject processReq(ReqObject data, SocketAddress remoteAddress) throws Exception {
+				public Resp processReq(Req data, SocketAddress remoteAddress) throws Exception {
 					
 					System.out.println("Client req: " + data);
 					
-					RespObject resp = new RespObject("echo: "+data.in);
+					Resp resp = new Resp("echo: "+data.in);
 					return resp;
 				}
 			});
 			
 			//client req
-			RespObject resp = (RespObject)client.invoke(new ReqObject("hello"));
+			Resp resp = (Resp)client.invoke(new Req("hello"));
 			System.out.println("Server resp: " + resp);
 			
+			client.forceCloseAll();
+			
 		}finally {
-			server.shutdownWait();
+			server.shutdownAsync();
 		}
 		
 	}
 	
-	static class ReqObject {
+	static class Req {
 		
 		public String in;
 
-		public ReqObject() {
+		public Req() {
 		}
 
-		public ReqObject(String in) {
+		public Req(String in) {
 			this.in = in;
 		}
 
 		@Override
 		public String toString() {
-			return "ReqObject [in=" + in + "]";
+			return "Req [in=" + in + "]";
 		}
 		
 	}
 	
-	static class RespObject {
+	static class Resp {
 		
 		public String result;
 
-		public RespObject() {
+		public Resp() {
 		}
 
-		public RespObject(String result) {
+		public Resp(String result) {
 			this.result = result;
 		}
 
 		@Override
 		public String toString() {
-			return "RespObject [result=" + result + "]";
+			return "Resp [result=" + result + "]";
 		}
 		
 		

@@ -76,7 +76,7 @@ public class SocketPoolDemo {
 			
 			
 		} finally {
-			server.shutdownWait();
+			server.shutdownAsync();
 		}
 		
 	}

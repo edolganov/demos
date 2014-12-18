@@ -2,16 +2,17 @@ package demo.socket.json.client;
 
 
 import static demo.util.concurrent.AsyncListener.*;
-import demo.socket.pool.SocketsPool;
-import demo.util.concurrent.AsyncListener;
-import demo.util.concurrent.ExecutorsUtil;
-import demo.util.model.SecureKeyHolder;
-import demo.util.model.SecureProviderImpl;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+
+import demo.socket.pool.SocketsPool;
+import demo.util.concurrent.AsyncListener;
+import demo.util.concurrent.ExecutorsUtil;
+import demo.util.model.SecureKeyHolder;
+import demo.util.model.SecureProviderImpl;
 
 
 
@@ -77,6 +78,10 @@ public class JsonSocketClient implements SecureKeyHolder {
 	
 	public Object invoke(final Class<?> type, final Object data) throws IOException {
 		return socketsPool.invoke(new JsonProtocolConnHandler(type, data, secureProvider));
+	}
+	
+	public void forceCloseAll() {
+		socketsPool.forceCloseAll();
 	}
 
 

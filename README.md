@@ -118,4 +118,7 @@ NoSql database for storing a comments in JSON format and fast read them.
 - Creating 10.000 urls with 500 comments (5.000.0000 total comments count)
 - 40MB RAM
 - 3,2GB HDD
+
 See [the test](https://github.com/edolganov/demos/blob/master/nosql-comments-db/test-src/performance/MaxDBCreate.java).
+
+This database was created and used in [freecom.me project](http://freecom.me/).

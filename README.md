@@ -115,7 +115,7 @@ See [full example](https://github.com/edolganov/demos/blob/master/demo/src/Socke
 NoSql database for storing a comments in JSON format and fast read them.
 
 **Capabilities:** 
-- Creating 10.000 urls with 500 comments (5.000.0000 total comments count)
+- Creating 10.000 urls with 500 comments (5.000.000 total comments count)
 - 40MB RAM
 - 3,2GB HDD
 

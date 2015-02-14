@@ -12,7 +12,9 @@ function App(){
 	var intervalId;
 	var delta = 15;
 	var x, y;
-
+	var prevX, prevY;
+	var curX, curY;
+	var ob = new Obj(w/2, h/2-100, 30, 150);
 
 
 	this.init = function(){
@@ -29,12 +31,24 @@ function App(){
 		c.strokeStyle = 'white';
 		c.lineWidth="1";
 
+		prevY = delta;
 		for(y = delta; y <= h; y += delta){
+			
+			curY = y;
+			prevX = 0;
+
 			for(x = delta; x <= w; x += delta){
+
+				curX = x;
+				curY = y;
+
 				c.beginPath();
-				c.moveTo(x - delta, y);
-				c.lineTo(x, y);
+				c.moveTo(prevX, prevY);
+				c.lineTo(curX, curY);
 				c.stroke();
+
+				prevX = curX;
+				prevY = curY;
 			}
 		}
 
@@ -47,15 +61,21 @@ function App(){
 			}
 		}
 
+		c.fillStyle = 'blue';
+		c.beginPath();
+		c.arc(ob.x, ob.y, ob.r, 0, 360);
+		c.fill();
+		c.stroke();
 
 	}
 
 }
 
 
-function Circle(x, y, color){
-
-
-
+function Obj(x, y, radius, mass){
+	this.x = x;
+	this.y = y;
+	this.r = radius;
+	this.m = mass;
 }
 
